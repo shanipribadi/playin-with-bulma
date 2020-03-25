@@ -1,73 +1,43 @@
 {
-  "_from": "bulma-start",
-  "_id": "bulma-start@0.0.3",
-  "_inBundle": false,
-  "_integrity": "sha512-LJchFdLKUAavS4c8qELN+5FoOicttX8fi1+M2mLZQyf+ru8tcooqQ3j9kdJq1p/FeVyfOLi4vtXP1b3k4tQdtA==",
-  "_location": "/bulma-start",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "bulma-start",
-    "name": "bulma-start",
-    "escapedName": "bulma-start",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/bulma-start/-/bulma-start-0.0.3.tgz",
-  "_shasum": "cca27a954506fe59df137ea676045173aac54894",
-  "_spec": "bulma-start",
-  "_where": "/Users/jthomas/Desktop",
   "author": {
-    "name": "Jeremy Thomas",
-    "email": "bbxdesign@gmail.com",
-    "url": "http://jgthms.com"
+    "name": "Shani Hadiyanto",
+    "email": "shanipribadi@gmail.com",
+    "url": "https://github.com/shanipribadi/playin-with-bulma"
   },
   "bugs": {
-    "url": "https://github.com/jgthms/bulma-start/issues"
+    "url": "https://github.com/shanipribadi/playin-with-bulma/issues"
   },
   "bundleDependencies": false,
   "deprecated": false,
-  "description": "Start package for Bulma",
+  "description": "Start package for Bulma using parcel",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
     "autoprefixer": "^9.7.5",
     "bulma": "^0.8.1",
-    "node-sass": "^4.13.1",
-    "npm-run-all": "^4.1.5",
-    "postcss-cli": "^7.1.0",
+    "envsub": "^4.0.7",
+    "parcel": "^2.0.0-alpha.3.2",
+    "sass": "^1.26.3",
     "serve": "^11.3.0"
   },
-  "homepage": "https://github.com/jgthms/bulma-start#readme",
+  "homepage": "https://github.com/shanipribadi/playin-with-bulma#readme",
   "keywords": [
     "sass",
     "bulma",
     "css",
-    "start"
+    "start",
+    "parcel"
   ],
   "license": "MIT",
-  "name": "bulma-start",
+  "name": "playin-with-bulma",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jgthms/bulma-start.git"
+    "url": "git+https://github.com/shanipribadi/playin-with-bulma.git"
   },
   "scripts": {
-    "css-build": "node-sass _sass/main.scss css/main.css",
-    "css-deploy": "npm run css-build && npm run css-postcss",
-    "css-postcss": "postcss --use autoprefixer --output css/main.css css/main.css",
-    "css-watch": "npm run css-build -- --watch",
-    "deploy": "npm run css-deploy && npm run js-build",
-    "js-build": "babel _javascript --out-dir lib",
-    "js-watch": "npm run js-build -- --watch",
-    "serve": "serve",
-    "start": "npm-run-all --parallel css-watch js-watch serve"
+    "envsub": "envsub src/env.json.template src/env.json",
+    "prestart": "npm run envsub",
+    "parcel": "parcel build ./src/index.html",
+    "start": "parcel ./src/index.html",
+    "build": "npm run envsub && npm run parcel"
   },
-  "version": "0.0.3"
+  "version": "0.0.1"
 }

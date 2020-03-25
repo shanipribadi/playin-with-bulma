@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My first Bulma website</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="main.scss">
+    <script defer type="module" src="main.js"></script>
   </head>
   <body>
     <section class="hero is-medium is-primary">
@@ -104,7 +105,7 @@
                     <strong>Edit</strong> <code>_sass/main.scss</code> by adding the following rule at the <strong>end</strong> of the file:
                     <br>
                     <pre><span style="color: #22863a;">html</span> {
-  <span style="color: #005cc5;"><span style="color: #005cc5;">background-color</span></span>: <span style="color: #24292e">$green</span>;
+  <span style="color: #005cc5;">background-color</span>: <span style="color: #24292e;">$green</span>;
 }</pre>
                   </p>
                 </li>
@@ -204,13 +205,12 @@
             </p>
             <p style="margin-top: 1rem;">
               <a href="http://bulma.io">
-                <img src="made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+                <img src="img/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
               </a>
             </p>
           </div>
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="lib/main.js"></script>
   </body>
 </html>
